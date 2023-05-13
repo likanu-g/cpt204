@@ -402,8 +402,13 @@ class Board {
 	 */
     int getColorNums(PieceState color) {
         // complete the code
-
-        return 0;
+        int nums = 0;
+        for (PieceState pieceState : this.ataxxBoard) {
+            if(pieceState.equals(color)) {
+                nums ++;
+            }
+        }
+        return nums;
     }
 
     // Please do not change code of the following method.
