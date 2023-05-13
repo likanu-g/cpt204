@@ -339,9 +339,13 @@ class Board {
     PieceState getWinner() {
         // complete the code 
         // Hints: Consider using couldMove, getColorNums, getConsecJumpNums
-		
-		
-		
+        //there is no cell total size equals Total number of unblocked squares
+		int redNums = this.getColorNums(RED);
+        int blueNums = this.getColorNums(BLUE);
+
+		if(!couldMove(RED) || !couldMove(BLUE) || totalMoves.size() >= unblockedNum) {
+            return redNums > blueNums ? RED : BLUE;
+        }
 		// Please do not change the return statement below
         return winner;
     }

@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static ataxx.PieceState.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class WinnerTest {
 
@@ -20,7 +21,7 @@ public class WinnerTest {
     @Test
     public void testEmptyWinner() {
         Board b = new Board();
-        assertEquals(null, b.getWinner());
+        assertNull(b.getWinner());
     }
 
     @Test
@@ -33,7 +34,7 @@ public class WinnerTest {
                 "g1-g2", "b1-b2"
         };
         createMoves(b, moves);
-        assertEquals(null, b.getWinner());
+        assertNull(b.getWinner());
     }
 
     @Test
