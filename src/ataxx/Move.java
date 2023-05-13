@@ -72,9 +72,21 @@ class Move {
 	  */
     static boolean isClone(String location0, String location1) {
         // complete the code
-		
-		
-		
+        //System.out.println("location0 = " + location0 + " location1 = " + location1);
+        boolean rowDif1 = Math.abs(location0.charAt(1) - location1.charAt(1)) == 1;
+        boolean colDif1 = Math.abs(location0.charAt(0) - location1.charAt(0)) == 1;
+		//row the same, col differ 1
+        if(location0.charAt(0) == location1.charAt(0) && rowDif1) {
+            return true;
+        }
+        //col the same ,row differ 1
+        if(location0.charAt(1) == location1.charAt(1) && colDif1) {
+            return true;
+        }
+        //col differ 1 ,row differ 1
+        if(rowDif1 && colDif1) {
+            return true;
+        }
         return false;
     }
 
@@ -84,9 +96,34 @@ class Move {
 	  */
     static boolean isJump(String location0, String location1) {
         // complete the code
-		
-		
-		
+
+        int abs = Math.abs(location0.charAt(1) - location1.charAt(1));
+        boolean rowDif2 = abs == 2;
+        int abs1 = Math.abs(location0.charAt(0) - location1.charAt(0));
+        boolean colDif2 = abs1 == 2;
+        boolean rowDif1 = abs == 1;
+        boolean colDif1 = abs1 == 1;
+        //row the same, col differ 2
+        if(location0.charAt(0) == location1.charAt(0) && rowDif2) {
+            return true;
+        }
+        //col the same ,row differ 2
+        if(location0.charAt(1) == location1.charAt(1) && colDif2) {
+            return true;
+        }
+        //col differ 2 ,row differ 2
+        if(rowDif2 && colDif2) {
+            return true;
+        }
+        //row differ 1 ,col differ 2
+        if(rowDif1 && colDif2) {
+            return true;
+        }
+        //row differ 2 ,col differ 1
+        if(rowDif2 && colDif1) {
+            return true;
+        }
+
         return false;
     }
 
