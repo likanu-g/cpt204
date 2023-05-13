@@ -239,15 +239,12 @@ class Board {
         if (!blockLegal(c, r)) {
             throw error("illegal block placement");
         }
-        char col = (char) ('g' - (c - 'a'));
-        char row = (char) ('7' - (r - '1'));
+       // char col = (char) ('g' - (c - 'a'));
+       // char row = (char) ('7' - (r - '1'));
 
         // Complete the code
         // Hints: Consider using the method setContent and the variable unblockedNum
-
-
-
-
+        setContent(c, r, BLOCKED);
 
         // Please do not change the following codes
         if (!couldMove(RED) && !couldMove(BLUE)) {

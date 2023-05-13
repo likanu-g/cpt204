@@ -30,6 +30,9 @@ public class BlockTest {
     public void testSettingBlocks() {
         Board b = new Board();
         b.setBlock('a', '2');
+        b.setBlock('a','6');
+        b.setBlock('g', '2');
+        b.setBlock('g','6');
         final PieceState[][] BLOCK = {
                 {RED, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, BLUE},
                 {BLOCKED, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, BLOCKED},
@@ -39,6 +42,7 @@ public class BlockTest {
                 {BLOCKED, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, BLOCKED},
                 {BLUE, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, RED}
         };
+        System.out.println("Board:  \n" + b.toString(true));
         checkBoard(b, BLOCK);
     }
 
@@ -47,7 +51,11 @@ public class BlockTest {
     public void testSettingBlocks1() {
         Board b1 = new Board();
         b1.setBlock('c','3');
+        b1.setBlock('c','5');
         b1.setBlock('d','6');
+        b1.setBlock('d','2');
+        b1.setBlock('e','3');
+        b1.setBlock('e','5');
         final PieceState[][] BLOCK1 = {
                 {RED, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, BLUE},
                 {EMPTY, EMPTY, EMPTY, BLOCKED, EMPTY, EMPTY, EMPTY},
